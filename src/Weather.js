@@ -1,7 +1,32 @@
+import React, { useState } from "react"
 import "./Weather.css"
+import axios from "axios"
 
 
-export default function Weather(){
+export default function Weather(props){
+    
+const [weatherData, setWeatherData] = useState({ready:false})
+
+function handleResponse(response){
+    console.log(response.data)
+    setWeatherData({
+        ready: true,
+        temperature: response.data.main.temp,
+    city: response.data.name,
+    date: "Sunday 18:32",
+    description: response.data.weather[0].description,
+wind: response.data.wind.speed,
+humidity: response.data.main.humidity,
+icon: "http://openweathermap.org/img/wn/01d@2x.png"
+
+});
+    
+    
+}
+
+if (weatherData.ready) {
+
+
     return(
     <div className="container weather">
 <form className="mt-3 mb-2">
@@ -12,15 +37,15 @@ export default function Weather(){
         
     </form>
     
-    <h1>London</h1>
-    <h6 className="mb-3">Last updated: Sunday 18:32</h6>
+    <h1>{weatherData.city}</h1>
+    <h6 className="mb-3">Last updated: {weatherData.date}</h6>
 
-    <h4 className="mb-3">Sunny</h4>
+    <h4 className="mb-3 weatherDescription">{weatherData.description}</h4>
 
     <div className="row mb-3">
-        <div className="col-4"> <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="Weather icon"/> </div>
-        <div className="col-4 temperature"><span>10</span><span className="units"><a href="#" alt="Convert to celsius" className="celsiusConversion">°C</a>|<a href="#" alt="Convert to fahrenheit" className="fahrenheitConversion">°F</a></span></div>
-        <div className="col-4 weatherDetails pt-2"><strong>Precipitation: 20% <br /> Humidity: 69% <br />Wind: 10km/h </strong></div>
+        <div className="col-4"> <img src={weatherData.icon} alt={weatherData.description}/> </div>
+        <div className="col-4 temperature"><span>{Math.round(weatherData.temperature)}</span><span className="units"><a href="#" alt="Convert to celsius" className="celsiusConversion">°C</a>|<a href="#" alt="Convert to fahrenheit" className="fahrenheitConversion">°F</a></span></div>
+        <div className="col-4 weatherDetails pt-2"><strong>Precipitation: tbc% <br /> Humidity: {weatherData.humidity}% <br />Wind: {Math.round(weatherData.wind)}km/h </strong></div>
 
     </div>
 
@@ -30,6 +55,15 @@ export default function Weather(){
     </div>
 
     )
+    }
 
+    else {
+ const apiKey = "ff8c3d30b19a1ec2572571f024a657bd"
+    let city = "London"
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(handleResponse)
+
+    return "Loading..."
+    }
     
 }

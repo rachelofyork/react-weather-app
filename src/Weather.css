@@ -26,6 +26,10 @@ input {
   border-radius: 40px;
 }
 
+.weatherDescription {
+  text-transform: capitalize;
+}
+
 .temperature {
   font-size: 60px;
 }
