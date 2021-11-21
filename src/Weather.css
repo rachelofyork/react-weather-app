@@ -1,0 +1,25 @@
+input {
+  border-radius: 40px;
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+.submit {
+  border-radius: 40px;
+  background-color: pink;
+
+  padding: 5px;
+  margin-left: 3px;
+}
+
+.temperature {
+  font-size: 60px;
+}
+
+.units {
+  font-size: 20px;
+}
+
+.weatherDetails {
+  font-size: 15px;
+}
