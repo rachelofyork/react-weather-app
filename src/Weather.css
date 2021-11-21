@@ -1,3 +1,11 @@
+.weather {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 30px;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
 input {
   border-radius: 40px;
   border: 1px solid gray;
@@ -6,10 +14,16 @@ input {
 
 .submit {
   border-radius: 40px;
+  border: 1 solid black;
   background-color: pink;
-
   padding: 5px;
   margin-left: 3px;
+}
+
+.currentLocation {
+  margin-left: 3px;
+  background-color: plum;
+  border-radius: 40px;
 }
 
 .temperature {
@@ -18,6 +32,8 @@ input {
 
 .units {
   font-size: 20px;
+  position: relative;
+  top: -30px;
 }
 
 .weatherDetails {
