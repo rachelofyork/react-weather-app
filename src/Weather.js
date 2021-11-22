@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./Weather.css"
+import DateFormatted from "./DateFormatted"  
 import axios from "axios"
 
 
@@ -13,7 +14,7 @@ function handleResponse(response){
         ready: true,
         temperature: response.data.main.temp,
     city: response.data.name,
-    date: "Sunday 18:32",
+    date: new Date(response.data.dt * 1000),
     description: response.data.weather[0].description,
 wind: response.data.wind.speed,
 humidity: response.data.main.humidity,
@@ -38,7 +39,7 @@ if (weatherData.ready) {
     </form>
     
     <h1>{weatherData.city}</h1>
-    <h6 className="mb-3">Last updated: {weatherData.date}</h6>
+    <h6 className="mb-3"> <DateFormatted  date={weatherData.date}/></h6>
 
     <h4 className="mb-3 weatherDescription">{weatherData.description}</h4>
 
