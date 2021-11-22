@@ -44,7 +44,7 @@ if (weatherData.ready) {
 
     <div className="row mb-3">
         <div className="col-4"> <img src={weatherData.icon} alt={weatherData.description}/> </div>
-        <div className="col-4 temperature"><span>{Math.round(weatherData.temperature)}</span><span className="units"><a href="#" alt="Convert to celsius" className="celsiusConversion">°C</a>|<a href="#" alt="Convert to fahrenheit" className="fahrenheitConversion">°F</a></span></div>
+        <div className="col-4 temperature"><span>{Math.round(weatherData.temperature)}</span><span className="units"><a href="https://www.bbc.co.uk/news" alt="Convert to celsius" className="celsiusConversion">°C</a>|<a href="https://www.bbc.co.uk/news" alt="Convert to fahrenheit" className="fahrenheitConversion">°F</a></span></div>
         <div className="col-4 weatherDetails pt-2"><strong>Precipitation: tbc% <br /> Humidity: {weatherData.humidity}% <br />Wind: {Math.round(weatherData.wind)}km/h </strong></div>
 
     </div>
