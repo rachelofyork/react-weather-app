@@ -59,7 +59,7 @@ if (weatherData.ready) {
 
     else {
  const apiKey = "ff8c3d30b19a1ec2572571f024a657bd"
-    let city = "London"
+    
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(handleResponse)
 
