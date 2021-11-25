@@ -19,7 +19,7 @@ function handleResponse(response){
     description: response.data.weather[0].description,
 wind: response.data.wind.speed,
 humidity: response.data.main.humidity,
-icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+icon: response.data.weather[0].icon
 
 });
        
