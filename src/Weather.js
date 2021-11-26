@@ -14,6 +14,7 @@ function handleResponse(response){
     console.log(response.data)
     setWeatherData({
         ready: true,
+        coord: response.data.coord,
         temperature: response.data.main.temp,
     city: response.data.name,
     date: new Date(response.data.dt * 1000),
@@ -56,7 +57,7 @@ if (weatherData.ready) {
     
 
     <WeatherInfo data={weatherData} />
-     <Forecast />
+     <Forecast coord={weatherData.coord} />
     </div>
     );
      } else {
