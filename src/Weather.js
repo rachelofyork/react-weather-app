@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "./Weather.css"
 import WeatherInfo from "./WeatherInfo"  
+import Forecast from "./Forecast"  
 import axios from "axios"
 
 
@@ -55,11 +56,15 @@ if (weatherData.ready) {
     
 
     <WeatherInfo data={weatherData} />
+     <Forecast />
     </div>
     );
      } else {
     search();
     return "Loading...";
       
+   
 }
+
+
 }
