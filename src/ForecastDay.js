@@ -24,7 +24,7 @@ return days[day];
     <div>
     <div className="ForecastDay mb-1"><strong>{formatDay()}</strong></div> 
     <WeatherIcons code={props.data.weather[0].icon} size={50} /> 
-    <div className="ForecastTemperatures mb-2"><span className="TemperatureMax">{maxTemp()}</span><span className="TemperatureMin">{minTemp()}</span></div>
+    <div className="ForecastTemperatures mb-2"><span className="TemperatureMax">{maxTemp()}</span> <span className="TemperatureMin">{minTemp()}</span></div>
     </div>
     )
 }

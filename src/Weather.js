@@ -38,6 +38,7 @@ event.preventDefault();
 search();
 }
 
+
 function handleCityChange(event){
 setCity(event.target.value);
 }
@@ -49,11 +50,10 @@ if (weatherData.ready) {
     <div className="container weather">
 <form onSubmit={handleSubmit} className="mt-3 mb-2">
                <span className="search"><input type = "search" placeholder=" Search for a city..." autoFocus="on" onChange={handleCityChange} /></span>
-       <span className="submit"><input type="submit" value="Search" className="btn" /></span>
-       <button className="currentLocation">Current Location</button>
-           
+       <span className="submit"><input type="submit" value="Search" className="btn" /></span>      
         
     </form>
+     
     
 
     <WeatherInfo data={weatherData} />
