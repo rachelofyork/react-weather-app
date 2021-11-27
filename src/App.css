@@ -3,6 +3,11 @@
   margin: 0 auto;
 }
 
+.container {
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
 footer {
   text-align: center;
   margin-top: 10px;
