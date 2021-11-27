@@ -20,9 +20,17 @@ if (loaded){
     <div className="Forecast">
         <hr/>
 <div className="row">
-<div className="col">
-  <ForecastDay data={forecast[0]} />
+    {forecast.slice(1).map(function( eachDayForecast, index){
+        if ( index < 5) {
+return (
+    <div className="col" key={index}>
+  <ForecastDay data={eachDayForecast} />
 </div>
+)
+        }
+    })}
+
+
 </div>
     </div>
     );
