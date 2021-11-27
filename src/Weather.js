@@ -28,7 +28,7 @@ icon: response.data.weather[0].icon
 }
 
 function search(){
-const apiKey = "ff8c3d30b19a1ec2572571f024a657bd";
+const apiKey = "42dc95b568e6a420992a783aadcc5090";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 }
