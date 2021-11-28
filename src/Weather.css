@@ -2,16 +2,20 @@
   text-align: center;
 }
 
+.loader {
+  text-align: center;
+}
+
 input {
   border-radius: 40px;
-  border: 1px solid gray;
+
   padding: 5px;
 }
 
 .submit {
   border-radius: 40px;
   border: 1px solid black;
-  padding-bottom: 5px;
+  padding: 5px;
 
   margin-left: 3px;
 }
